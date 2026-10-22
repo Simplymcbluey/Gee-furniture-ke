@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17120e">
+<meta name="description" content="Discover furniture for living rooms, bedrooms, dining rooms and offices at Gee Furnitures KE, Ngara, Nairobi.">
+<title>Gee Furnitures KE | The Art Reflects the Quality</title>
+
+<style>
+:root {
+  --dark:#17120e;
+  --brown:#493326;
+  --gold:#c9a66b;
+  --cream:#f7f3ed;
+  --white:#fff;
+  --muted:#766b60;
+  --line:#e5dbce;
+  --green:#168b4b;
+  --serif:Georgia,"Times New Roman",serif;
+  --shadow:0 15px 45px rgba(23,18,14,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--dark);line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1180px,92%);margin:auto}
+section{scroll-margin-top:85px}
+.section{padding:90px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;color:#8b6940;font-size:11px;font-weight:800;margin-bottom:13px}
+.heading{text-align:center;max-width:720px;margin:0 auto 45px}
+.heading h2{font:clamp(32px,5vw,49px)/1.12 var(--serif);margin-bottom:15px}
+.heading p{color:var(--muted)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 21px;border:1px solid transparent;border-radius:3px;font-weight:700;font-size:13px;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--dark)}
+.btn-gold:hover{background:#e1c28d;transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.7);color:white}
+.btn-outline:hover{background:white;color:var(--dark)}
+.btn-dark{background:var(--dark);color:white}
+.btn-dark:hover{background:var(--brown)}
+.announcement{background:#0e0b08;color:#eee2d2;text-align:center;padding:8px 12px;font-size:10px;letter-spacing:2px}
+.announcement strong{color:var(--gold)}
+header{position:sticky;top:0;z-index:1000;background:rgba(247,243,237,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{width:46px;height:46px;display:grid;place-items:center;background:var(--dark);color:var(--gold);border:1px solid var(--gold);font:700 22px var(--serif)}
+.brand-name{font:700 18px var(--serif);letter-spacing:.4px}
+.brand-tag{display:block;font-size:9px;color:#8b6940;letter-spacing:1.3px;text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:21px}
+.nav-links a{font-size:12px;font-weight:700}
+.nav-links a:hover{color:#967242}
+.nav-links .nav-cta{background:var(--green);color:white;padding:11px 14px;border-radius:3px}
+.menu-toggle{display:none;background:transparent;border:1px solid var(--line);padding:5px 12px;font-size:25px;color:var(--dark)}
+.location-bar{overflow:hidden;white-space:nowrap;background:#e9ddca;border-bottom:1px solid #d8c8b1;padding:9px 0}
+.location-track{display:flex;width:max-content;animation:marquee 25s linear infinite}
+.location-track span{padding-right:65px;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* =================================================
+   HERO PHOTO FILES — CHANGE YOUR JPG NAMES HERE
+   images/IMG-20261022-WA0017.jpg
+   images/IMG-20261022-WA0023.jpg
+   images/IMG-20261022-WA0029.jpg
+================================================= */
+.hero{position:relative;min-height:620px;background:var(--dark);color:white;overflow:hidden}
+.hero-slides{position:relative;min-height:620px}
+.hero-slide{
+  position:absolute;inset:0;display:flex;align-items:center;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .7s ease,visibility .7s ease;
+  background-color:var(--dark);
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+}
+.hero-slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
+.hero-one{background-image:linear-gradient(90deg,rgba(17,12,8,.88),rgba(17,12,8,.48),rgba(17,12,8,.20)),url("images/hero1.jpg")}
+.hero-two{background-image:linear-gradient(90deg,rgba(17,12,8,.88),rgba(17,12,8,.48),rgba(17,12,8,.20)),url("images/hero2.jpg")}
+.hero-three{background-image:linear-gradient(90deg,rgba(17,12,8,.88),rgba(17,12,8,.48),rgba(17,12,8,.20)),url("images/hero3.jpg")}
+.hero-content{max-width:760px;padding:85px 0 115px;position:relative;z-index:2}
+.hero-kicker{color:var(--gold);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:4px;margin-bottom:22px}
+.hero h1{font:clamp(43px,7vw,79px)/1.04 var(--serif);margin-bottom:24px;max-width:760px}
+.hero h1 em{color:var(--gold);font-weight:400}
+.hero-description{max-width:580px;color:#eee3d6;font-size:15px;margin-bottom:29px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-number{font-size:12px;color:#eee3d6;margin-top:27px}
+.hero-number a{color:var(--gold);font-weight:700}
+.hero-controls{position:absolute;z-index:5;bottom:30px;left:4%;display:flex;align-items:center;gap:11px}
+.slide-dot{width:9px;height:9px;border:0;border-radius:20px;background:#a49684;padding:0;transition:.3s}
+.slide-dot.active{width:31px;background:var(--gold)}
+.hero-count{font-size:11px;color:#f1e5d7;margin-left:6px}
+.hero-arrow{width:37px;height:37px;border:1px solid #b4a18c;background:rgba(20,15,11,.5);color:white;border-radius:50%;font-size:19px;margin-left:5px}
+.hero-arrow:hover{background:var(--gold);color:var(--dark)}
+.trust{background:white;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.trust-item{text-align:center;padding:25px 15px;border-right:1px solid var(--line)}
+.trust-item:last-child{border:0}
+.trust-item strong{display:block;font:20px var(--serif)}
+.trust-item span{font-size:12px;color:var(--muted)}
+
+/* CATEGORY PHOTOS */
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+.category-card{background:white;border:1px solid var(--line);overflow:hidden;transition:.3s}
+.category-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.category-card img{height:280px;transition:transform .6s}
+.category-card:hover img{transform:scale(1.04)}
+.image-wrap{overflow:hidden}
+.category-info{padding:23px}
+.category-info h3{font:27px var(--serif);margin-bottom:7px}
+.category-info p{font-size:13px;color:var(--muted);margin-bottom:17px}
+.text-link{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--gold);padding-bottom:4px}
+
+/* ABOUT */
+.about-section{background:#eee4d7}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+.about-image{height:510px;overflow:hidden}
+.about-image img{height:100%}
+.about-copy h2{font:clamp(34px,4.5vw,52px)/1.1 var(--serif);margin-bottom:20px}
+.about-copy p{color:var(--muted);margin-bottom:16px}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0 28px}
+.about-point{background:rgba(255,255,255,.7);padding:15px;border-left:3px solid var(--gold)}
+.about-point strong{display:block;font-size:12px}
+.about-point span{font-size:11px;color:var(--muted)}
+
+/* COLLECTION */
+.collection-section{background:white}
+.collection-tools{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:27px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter-btn{border:1px solid var(--line);background:var(--cream);padding:9px 13px;font-size:11px;font-weight:800}
+.filter-btn.active,.filter-btn:hover{background:var(--dark);color:white;border-color:var(--dark)}
+.search{width:min(100%,260px);padding:11px 13px;border:1px solid var(--line);background:var(--cream);outline:none}
+.search:focus{border-color:var(--gold)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+.product-card{background:var(--cream);border:1px solid var(--line);overflow:hidden;transition:.3s}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.product-card img{height:260px;transition:transform .5s}
+.product-card:hover img{transform:scale(1.035)}
+.product-info{padding:20px}
+.product-category{font-size:10px;font-weight:800;color:#8b6940;letter-spacing:2px;text-transform:uppercase}
+.product-info h3{font:23px var(--serif);margin:7px 0}
+.product-info p{font-size:12px;color:var(--muted);margin-bottom:18px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:15px}
+.product-bottom span{font-size:11px;color:var(--muted)}
+.product-bottom .btn{font-size:11px;padding:9px 13px}
+.no-results{display:none;text-align:center;padding:30px;color:var(--muted)}
+
+/* FEATURE BANNER */
+.feature-banner{background:var(--dark);color:white;text-align:center;padding:80px 0;background-image:radial-gradient(ellipse at 80% 20%,rgba(201,166,107,.18),transparent 42%)}
+.feature-banner h2{font:clamp(34px,5vw,51px)/1.1 var(--serif);margin-bottom:17px}
+.feature-banner p{max-width:650px;margin:0 auto 25px;color:#ded1c2}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+.contact-copy h2{font:clamp(34px,4vw,45px)/1.1 var(--serif);margin-bottom:18px}
+.contact-copy>p{color:var(--muted);margin-bottom:23px}
+.contact-detail{padding:16px 0;border-bottom:1px solid var(--line)}
+.contact-detail strong{display:block;margin-bottom:4px}
+.contact-detail span,.contact-detail a{font-size:13px;color:var(--muted)}
+.contact-detail a:hover{color:#916b38}
+.contact-form{background:white;border:1px solid var(--line);padding:30px;box-shadow:var(--shadow)}
+.contact-form h3{font:27px var(--serif);margin-bottom:5px}
+.form-intro{font-size:12px;color:var(--muted);margin-bottom:23px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:11px;font-weight:800;margin-bottom:7px}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid var(--line);padding:12px;background:#fffdfa;outline:none;border-radius:2px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{min-height:110px;resize:vertical}
+.contact-form button{width:100%;border:0}
+.form-note{text-align:center;font-size:10px;color:var(--muted);margin-top:12px}
+
+/* FOOTER */
+footer{background:#100c09;color:white;padding:55px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:35px}
+.footer-brand{font:26px var(--serif);margin-bottom:12px}
+.footer-about{font-size:12px;color:#c7b8a8;max-width:360px}
+.footer-heading{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:15px}
+.footer-links{display:grid;gap:9px}
+.footer-links a,.footer-links span{font-size:12px;color:#d7cbbc}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #3b2d22;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#a99a8a;font-size:10px}
+.footer-slogan{color:var(--gold);margin-top:15px;font-size:12px}
+.whatsapp-float{position:fixed;right:17px;bottom:18px;z-index:900;background:var(--green);color:white;border-radius:40px;padding:13px 17px;font-size:12px;font-weight:800;box-shadow:0 7px 22px #0003}
+.back-top{position:fixed;right:24px;bottom:78px;z-index:900;width:37px;height:37px;border:0;border-radius:50%;background:var(--dark);color:var(--gold);font-size:20px;display:none}
+.back-top.visible{display:block}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:950px){
+ .nav-links{gap:12px}
+ .nav-links a{font-size:11px}
+ .about-grid{gap:30px}
+ .contact-grid{gap:25px}
+ .products-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+ .nav{min-height:70px}
+ .brand-name{font-size:16px}
+ .brand-tag{font-size:8px;letter-spacing:.7px}
+ .brand-mark{width:40px;height:40px}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:12px 4% 18px;border-bottom:1px solid var(--line);align-items:stretch;gap:0}
+ .nav-links.open{display:flex;flex-direction:column}
+ .nav-links a{font-size:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+ .nav-links .nav-cta{text-align:center;margin-top:10px;padding:12px}
+ .hero,.hero-slides{min-height:590px}
+ .hero-slide{background-position:60% center}
+ .hero-content{padding:75px 0 115px}
+ .hero h1{font-size:clamp(41px,11vw,60px)}
+ .hero-description{font-size:14px}
+ .hero-controls{bottom:25px}
+ .trust-grid{grid-template-columns:1fr}
+ .trust-item{border-right:0;border-bottom:1px solid var(--line);padding:17px}
+ .trust-item:last-child{border-bottom:0}
+ .section{padding:62px 0}
+ .category-grid,.products-grid{grid-template-columns:1fr}
+ .category-card img{height:270px}
+ .product-card img{height:280px}
+ .about-grid,.contact-grid{grid-template-columns:1fr}
+ .about-image{height:320px}
+ .about-points{grid-template-columns:1fr 1fr}
+ .collection-tools{align-items:stretch}
+ .search{width:100%}
+ .contact-form{padding:22px}
+ .footer-grid{grid-template-columns:1fr;gap:30px}
+ .footer-bottom{flex-direction:column}
+ .feature-banner{padding:62px 0}
+ .whatsapp-float{right:10px;bottom:10px;padding:12px 13px}
+ .back-top{right:17px;bottom:70px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .location-track{animation:none}
+ .reveal{opacity:1;transform:none}
+ *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+<div class="announcement">
+  WELCOME TO <strong>GEE FURNITURES KE</strong> — THE ART REFLECTS THE QUALITY
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Gee Furnitures KE home">
+      <div class="brand-mark">GF</div>
+      <div>
+        <div class="brand-name">GEE FURNITURES KE</div>
+        <span class="brand-tag">The Art Reflects the Quality</span>
+      </div>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/254721541290" target="_blank" rel="noopener">WhatsApp Us ↗</a>
+    </nav>
+  </div>
+</header>
+
+<div class="location-bar" aria-label="Business location">
+  <div class="location-track">
+    <span>📍 Located in Ngara, Nairobi, Kenya</span>
+    <span>✦ Quality Furniture • Timeless Style • Everyday Comfort</span>
+    <span>📍 Located in Ngara, Nairobi, Kenya</span>
+    <span>✦ Quality Furniture • Timeless Style • Everyday Comfort</span>
+  </div>
+</div>
+
+<main>
+  <!-- THREE AUTOMATIC HERO SLIDES: 3 SECONDS EACH -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+
+      <article class="hero-slide hero-one active">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-kicker">Welcome to Gee Furnitures KE</div>
+            <h1>The Art Reflects <em>the Quality.</em></h1>
+            <p class="hero-description">Discover furniture that brings comfort, character and refined style into your home. Explore our collection and find inspiration for your space.</p>
+            <div class="hero-actions">
+              <a href="#collection" class="btn btn-gold">Explore the Collection →</a>
+              <a href="#contact" class="btn btn-outline">Make an Enquiry</a>
+            </div>
+            <p class="hero-number">Call or WhatsApp: <a href="https://wa.me/254721541290">0721 541 290</a></p>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide hero-two">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-kicker">Style • Comfort • Craft</div>
+            <h1>Make Every Space <em>Feel Special.</em></h1>
+            <p class="hero-description">From inviting living rooms to peaceful bedrooms and welcoming dining spaces, discover ideas to bring your interior vision to life.</p>
+            <div class="hero-actions">
+              <a href="#categories" class="btn btn-gold">Explore Categories →</a>
+              <a href="https://wa.me/254705067567" class="btn btn-outline" target="_blank" rel="noopener">Talk to Our Team</a>
+            </div>
+            <p class="hero-number">Find us in Ngara, Nairobi, Kenya.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide hero-three">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-kicker">Your Space, Your Style</div>
+            <h1>Find Your Next <em>Favourite Piece.</em></h1>
+            <p class="hero-description">Looking for a sofa, bed, dining table or office furniture? Send us an enquiry and tell us what you have in mind.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-gold">Let's Talk Furniture →</a>
+              <a href="https://wa.me/254721541290" class="btn btn-outline" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </div>
+            <p class="hero-number">Two convenient WhatsApp contacts for your enquiries.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="hero-controls" aria-label="Hero slide controls">
+      <button class="slide-dot active" data-slide="0" aria-label="Show slide 1"></button>
+      <button class="slide-dot" data-slide="1" aria-label="Show slide 2"></button>
+      <button class="slide-dot" data-slide="2" aria-label="Show slide 3"></button>
+      <span class="hero-count" id="heroCount">01 / 03</span>
+      <button class="hero-arrow" id="prevSlide" aria-label="Previous slide">‹</button>
+      <button class="hero-arrow" id="nextSlide" aria-label="Next slide">›</button>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="container trust-grid">
+      <div class="trust-item"><strong>Style That Lasts</strong><span>Thoughtful furniture inspiration</span></div>
+      <div class="trust-item"><strong>Spaces That Feel Right</strong><span>Ideas for different rooms</span></div>
+      <div class="trust-item"><strong>Easy Enquiries</strong><span>Connect with us on WhatsApp</span></div>
+    </div>
+  </section>
+
+  <!-- CATEGORY PHOTOS -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="heading reveal">
+        <div class="eyebrow">Explore the Possibilities</div>
+        <h2>Furniture for Every Space</h2>
+        <p>Discover inspiration for your home and workspace. Each category has its own photo, which you can replace with your own image.</p>
+      </div>
+
+      <div class="category-grid">
+        <article class="category-card reveal">        
+          <div class="image-wrap"><img src="images/IMG-20261022-WA000R2.jpg" alt="Living room furniture" loading="lazy"></div>
+          <div class="category-info">
+            <div class="eyebrow">Relax • Gather • Enjoy</div>
+            <h3>Living Room</h3>
+            <p>Create a welcoming place for relaxing, entertaining and everyday life.</p>
+            <a class="text-link" href="#collection" data-filter-link="living">Explore Living Room →</a>
+          </div>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="image-wrap"><img src="images/IMG-20261022-WA0009.jpg" alt="Bedroom furniture" loading="lazy"></div>
+          <div class="category-info">
+            <div class="eyebrow">Rest • Recharge • Refresh</div>
+            <h3>Bedroom</h3>
+            <p>Explore bedroom furniture ideas for a calm and comfortable space.</p>
+            <a class="text-link" href="#collection" data-filter-link="bedroom">Explore Bedroom →</a>
+          </div>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="image-wrap"><img src="images/IMG-20261022-WA0023.jpg" alt="Dining room furniture" loading="lazy"></div>
+          <div class="category-info">
+            <div class="eyebrow">Share • Connect • Celebrate</div>
+            <h3>Dining Room</h3>
+            <p>Bring people together around a table designed for shared moments.</p>
+            <a class="text-link" href="#collection" data-filter-link="dining">Explore Dining →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-image reveal">
+        <img src="images/Screenshot_2026101022_130451.png" alt="Gee Furnitures KE showroom or furniture display" loading="lazy">
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">Our Story</div>
+        <h2>Good Furniture. Beautiful Spaces.</h2>
+        <p>Welcome to Gee Furnitures KE, located in Ngara, Nairobi, Kenya.</p>
+        <p>Furniture is more than something that fills a room. It helps shape the atmosphere, comfort and character of the spaces where life happens.</p>
+        <p>Explore the collection and contact us to discuss the furniture you are looking for.</p>
+        <div class="about-points">
+          <div class="about-point"><strong>Thoughtful Style</strong><span>Ideas for your space</span></div>
+          <div class="about-point"><strong>Customer Enquiries</strong><span>Speak with us directly</span></div>
+          <div class="about-point"><strong>Different Categories</strong><span>Furniture for every room</span></div>
+          <div class="about-point"><strong>Convenient Contact</strong><span>Phone and WhatsApp</span></div>
+        </div>
+        <a href="#contact" class="btn btn-dark">Get in Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT COLLECTION: EACH PRODUCT HAS ITS OWN PHOTO -->
+  <section class="section collection-section" id="collection">
+    <div class="container">
+      <div class="heading reveal">
+        <div class="eyebrow">The Collection</div>
+        <h2>Discover Your Next Piece</h2>
+        <p>Search or filter the sample collection. Ask us for current prices, available options and product details.</p>
+      </div>
+
+      <div class="collection-tools">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All Furniture</button>
+          <button class="filter-btn" data-filter="living">Living Room</button>
+          <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+          <button class="filter-btn" data-filter="dining">Dining</button>
+          <button class="filter-btn" data-filter="office">Office</button>
+        </div>
+        <input class="search" id="productSearch" type="search" placeholder="Search furniture..." aria-label="Search furniture">
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <article class="product-card reveal" data-category="living" data-name="Living Room Sofa">
+          <div class="image-wrap"><img src="images/.IMG-20261022-WA0004.jpg" alt="Living room sofa" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Living Room</span>
+            <h3>Living Room Sofa</h3>
+            <p>Comfortable seating ideas for relaxing and welcoming guests.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Living Room Sofa">Enquire ↗</a></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="bedroom" data-name="Bedroom Bed">
+          <div class="image-wrap"><img src="images/IMG-20261022-WA0009.jpg" alt="Bedroom bed" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Bedroom</span>
+            <h3>Bedroom Bed</h3>
+            <p>Explore bed styles to complement your personal space.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Bedroom Bed">Enquire ↗</a></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="dining" data-name="Dining Table">
+          <div class="image-wrap"><img src="images/.Screenshot_20261022_131553.png" alt="Dining table" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Dining</span>
+            <h3>Dining Table</h3>
+            <p>A centrepiece for meals, conversations and shared moments.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Dining Table">Enquire ↗</a></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="living" data-name="Coffee Table">
+          <div class="image-wrap"><img src="images/IMG-20261022-WA0026.jpg" alt="Coffee table" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Living Room</span>
+            <h3>Coffee Table</h3>
+            <p>Add a practical finishing touch to your living room.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Coffee Table">Enquire ↗</a></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-cachtegory="office" data-name="Office Desk">
+          <div class="image-wrap"><img src="images/Screenshot_20261022_173102.png" alt="Office desk" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Office</span>
+            <h3>Office Desk</h3>
+            <p>Furniture ideas for a productive and organised workspace.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Office Desk">Enquire ↗</a></div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="bedroom" data-name="Wardrobe">
+          <div class="image-wrap"><img src="images/Screenshot_2026101022_130451creenshot_20261022_130403.png" alt="Bedroom wardrobe" loading="lazy"></div>
+          <div class="product-info">
+            <span class="product-category">Bedroom</span>
+            <h3>Wardrobe</h3>
+            <p>Storage options to help keep your bedroom organised.</p>
+            <div class="product-bottom"><span>Ask for price</span><a href="#" class="btn btn-dark product-enquiry" data-product="Wardrobe">Enquire ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="no-results" id="noResults">No matching products found. Try another search.</p>
+      <div style="text-align:center;margin-top:35px">
+        <a href="#contact" class="btn btn-gold">Ask About a Product →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-banner">
+    <div class="container reveal">
+      <div class="eyebrow" style="color:var(--gold)">Your Space, Your Style</div>
+      <h2>The Art Reflects the Quality.</h2>
+      <p>Have a particular piece in mind? Contact Gee Furnitures KE to discuss your furniture needs and ask about pricing and availability.</p>
+      <a class="btn btn-gold" href="https://wa.me/254721541290?text=Hello%20Gee%20Furnitures%20KE%2C%20I%20would%20like%20to%20enquire%20about%20your%20furniture." target="_blank" rel="noopener">Chat on WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal">
+        <div class="eyebrow">Contact Us</div>
+        <h2>Let's Find the Right Furniture for You.</h2>
+        <p>Have a question about a product? Send us an enquiry or contact us directly through WhatsApp.</p>
+
+        <div class="contact-detail">
+          <strong>📍 Our Location</strong>
+          <span>Ngara, Nairobi, Kenya</span>
+        </div>
+        <div class="contact-detail">
+          <strong>📱 WhatsApp Number 1</strong>
+          <a href="https://wa.me/254721541290" target="_blank" rel="noopener">+254 721 541 290</a>
+        </div>
+        <div class="contact-detail">
+          <strong>📱 WhatsApp Number 2</strong>
+          <a href="https://wa.me/254705067567" target="_blank" rel="noopener">+254 705 067 567</a>
+        </div>
+        <p style="font-size:12px;margin-top:20px">Tap either number to begin a WhatsApp conversation.</p>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <h3>Send an Enquiry</h3>
+        <p class="form-intro">Complete the details below to prepare a message for WhatsApp.</p>
+
+        <div class="form-group">
+          <label for="customerName">Your Name</label>
+          <input id="customerName" type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="customerPhone">Your Phone Number</label>
+          <input id="customerPhone" type="tel" placeholder="e.g. 07XX XXX XXX" required>
+        </div>
+        <div class="form-group">
+          <label for="productInterest">What are you interested in?</label>
+          <select id="productInterest" required>
+            <option value="">Select a category</option>
+            <option>Living Room Furniture</option>
+            <option>Bedroom Furniture</option>
+            <option>Dining Furniture</option>
+            <option>Office Furniture</option>
+            <option>Other Furniture</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contactNumber">Send enquiry to</label>
+          <select id="contactNumber">
+            <option value="254721541290">0721 541 290</option>
+            <option value="254705067567">0705 067 567</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="customerMessage">Your Message</label>
+          <textarea id="customerMessage" placeholder="Tell us what furniture you are looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold">Prepare WhatsApp Enquiry →</button>
+        <p class="form-note">This front-end form opens WhatsApp with your message. It does not save customer details to a database.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">GEE FURNITURES KE</div>
+        <p class="footer-about">Furniture inspiration for beautiful, comfortable spaces. Explore our collection and get in touch with our team.</p>
+        <p class="footer-slogan">The Art Reflects the Quality.</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">Explore</h3>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#categories">Categories</a>
+          <a href="#collection">Collection</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-heading">Find Us</h3>
+        <div class="footer-links">
+          <span>📍 Ngara, Nairobi, Kenya</span>
+          <a href="https://wa.me/254721541290" target="_blank" rel="noopener">WhatsApp: 0721 541 290</a>
+          <a href="https://wa.me/254705067567" target="_blank" rel="noopener">WhatsApp: 0705 067 567</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> Gee Furnitures KE. All rights reserved.</span>
+      <span>The Art Reflects the Quality.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/254721541290" target="_blank" rel="noopener" aria-label="Chat with Gee Furnitures KE on WhatsApp">☎ WhatsApp Us</a>
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+/* MOBILE NAVIGATION */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "×" : "☰";
+});
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* HERO SLIDER: AUTOMATIC CHANGE EVERY 3 SECONDS */
+const slides = [...document.querySelectorAll(".hero-slide")];
+const dots = [...document.querySelectorAll(".slide-dot")];
+const heroCount = document.getElementById("heroCount");
+let currentSlide = 0;
+let sliderTimer;
+
+function showSlide(index) {
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+
+  heroCount.textContent =
+    String(currentSlide + 1).padStart(2, "0") +
+    " / " + String(slides.length).padStart(2, "0");
+}
+
+function startSlider() {
+  clearInterval(sliderTimer);
+  sliderTimer = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 3000);
+}
+
+dots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    showSlide(Number(dot.dataset.slide));
+    startSlider();
+  });
+});
+
+document.getElementById("prevSlide").addEventListener("click", () => {
+  showSlide(currentSlide - 1);
+  startSlider();
+});
+
+document.getElementById("nextSlide").addEventListener("click", () => {
+  showSlide(currentSlide + 1);
+  startSlider();
+});
+
+showSlide(0);
+startSlider();
+
+/* PRODUCT SEARCH AND CATEGORY FILTERS */
+const filterButtons = [...document.querySelectorAll(".filter-btn")];
+const productCards = [...document.querySelectorAll(".product-card")];
+const productSearch = document.getElementById("productSearch");
+const noResults = document.getElementById("noResults");
+let selectedCategory = "all";
+
+function filterProducts() {
+  const term = productSearch.value.toLowerCase().trim();
+  let count = 0;
+
+  productCards.forEach(card => {
+    const category = card.dataset.category;
+    const searchable = (card.dataset.name + " " + card.textContent).toLowerCase();
+    const matchesCategory = selectedCategory === "all" || category === selectedCategory;
+    const matchesSearch = searchable.includes(term);
+    const visible = matchesCategory && matchesSearch;
+
+    card.style.display = visible ? "" : "none";
+    if (visible) count++;
+  });
+
+  noResults.style.display = count ? "none" : "block";
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedCategory = button.dataset.filter;
+    filterButtons.forEach(item => item.classList.toggle("active", item === button));
+    filterProducts();
+  });
+});
+
+productSearch.addEventListener("input", filterProducts);
+
+document.querySelectorAll("[data-filter-link]").forEach(link => {
+  link.addEventListener("click", () => {
+    selectedCategory = link.dataset.filterLink;
+    filterButtons.forEach(button => {
+      button.classList.toggle("active", button.dataset.filter === selectedCategory);
+    });
+    filterProducts();
+  });
+});
+
+/* PRODUCT ENQUIRIES: OPEN WHATSAPP WITH PRODUCT NAME */
+document.querySelectorAll(".product-enquiry").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    const product = link.dataset.product;
+    const message =
+      "Hello Gee Furnitures KE! I am interested in the " + product +
+      ". Please share the price, available options and more details.";
+    const url = "https://wa.me/254721541290?text=" + encodeURIComponent(message);
+    window.open(url, "_blank", "noopener");
+  });
+});
+
+/* CONTACT FORM: PREPARE WHATSAPP MESSAGE */
+document.getElementById("contactForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const name = document.getElementById("customerName").value.trim();
+  const phone = document.getElementById("customerPhone").value.trim();
+  const interest = document.getElementById("productInterest").value;
+  const message = document.getElementById("customerMessage").value.trim();
+  const number = document.getElementById("contactNumber").value;
+
+  const text =
+    "Hello Gee Furnitures KE!\n\n" +
+    "My name is: " + name + "\n" +
+    "My phone number: " + phone + "\n" +
+    "I am interested in: " + interest + "\n" +
+    "My enquiry: " + (message || "Please share more details.") +
+    "\n\nI found your website and would like assistance.";
+
+  const url = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
+  window.open(url, "_blank", "noopener");
+});
+
+/* BACK TO TOP */
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+  backTop.classList.toggle("visible", window.scrollY > 450);
+});
+
+backTop.addEventListener("click", () => {
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+
+/* REVEAL ANIMATIONS */
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.1});
+
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add("visible"));
+}
+
+/* COPYRIGHT YEAR */
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
